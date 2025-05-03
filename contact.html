@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Cedarville+Cursive&family=Chela+One&family=Fruktur:ital@0;1&family=Jacquard+24&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Langar&family=Lilita+One&family=Lobster&family=Patrick+Hand&family=Protest+Guerrilla&family=Rubik+Spray+Paint&family=Slackey&display=swap" rel="stylesheet">
+    <style>
+        .navbar{
+    background-color: #ffffff;
+    padding:20px 40px;
+    box-shadow: 5px 7px 9px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Lilita One", sans-serif;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    height: 100%;
+}
+
+.nav-links li{
+    height:50px;
+    width:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.8s;
+}
+
+.nav-links li:hover{
+    background-color:#ffffff;
+    box-shadow: 5px 10px 20px rgba(91, 52, 12, 0.3);
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color:black;
+}
+
+li{
+    position: relative;
+}
+
+.dropdown{
+    display: none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    list-style: none;
+    padding: 0px 0px;
+    min-width: 160px;
+    z-index:100;
+    border-bottom: 1px solid #111;
+}
+
+.dropdown li{
+    width: 100%;
+    height: 50px;
+    color: black; 
+}
+
+li:hover .dropdown{
+    color:#a0522d;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    background-color: lightgray;
+    display: block;
+}
+
+img{
+    width:50px;
+    height: 50px;
+}
+
+.call{
+    height:30px;
+    width: 25px;
+}
+
+.personalinfo{
+    display: none;
+    min-width:160px;
+    top:100%;
+    background-color: lightgray;
+    position: absolute;
+    padding: 0px 0px;
+    text-align: center;
+}
+
+.personalinfo li{
+    width: 100%;
+    height:50px;
+}
+
+li:hover .personalinfo{
+    box-shadow: rgba(0,0,0,0.3);
+    display: block;
+}
+
+.login{
+    display: none;
+    background-color: lightgray;
+    position: absolute;
+    top:100%;
+    padding:0 0;
+    min-width: 160px;
+}
+.login li{
+    width:100%;
+    height:50px;
+}
+li:hover .login{
+    box-shadow: rgba(0,0,0,0.3);
+    display: block;
+}
+
+#intropage{
+    width: 100%;
+    height:85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f8e5be;
+    background-size:100%;
+    transition-duration: 1s;
+}
+#intropage h1{
+    font-size: 80px;
+    font-family: "Lilita One", sans-serif;
+    color: rgb(212, 117, 212);
+}
+
+#Contact{
+    display: flex;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+}
+#details{
+    width: 50%;
+    height: fit-content;
+    background-color: white;
+    font-family:"Averia Gruesa Libre", system-ui;
+    color: rgb(69, 42, 42);
+    background-color: white;
+}
+h2{
+    font-family: "Protest Strike", sans-serif;
+    font-size: 6vh;
+    color:rgb(72, 72, 123);
+    width: 100%;
+    padding-top: 10vh;
+}
+.content{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.content img{
+    width: 40%;
+    height: auto;
+    transition-duration: 0.5s;
+}
+.content img:hover{
+    background-color: rgb(250, 196, 94);
+    width: 45%;
+    height: auto;
+    border: rgb(242, 197, 112);
+    border-width:2px;
+}
+
+#message{
+    width: 50%;
+    height: 100%;
+    background-color: white;
+}
+#message form{
+    font-family: "Lilita One", sans-serif;
+    font-size: 4vh;
+    color: rgb(227, 71, 97);
+    text-align: left;
+    padding-left: 5vw;
+}
+#Message{
+    width: 75%;
+    height: 15vh;
+    font-size: 2vh;
+    font-family:"Averia Gruesa Libre", system-ui;
+    border-radius: 2vh;
+    border-width: 0.1px;
+}
+.form{
+    width: 75%;
+    height: 4vh;
+    font-size: 2vh;
+    font-family:"Averia Gruesa Libre", system-ui;
+    border-radius: 2vh;
+    border-width: 0.1px;
+}
+#message button{
+    width:15vw;
+    height: 5vh;
+    border-radius: 2vh;
+    border-width: 0;
+    background-color: rgb(69, 69, 255);
+    color: #fff;
+    font-family:"Lilita One", sans-serif;
+    font-weight: 100;
+    font-size: 60%;
+    transition-duration: 0.3s;
+}
+#message button:hover{
+    background-color: white;
+    color:blue;
+}
+
+        footer{
+    width:100%;
+    height: 85vh;
+    background-color: rgb(63, 69, 151);
+    margin-top: 15vh;
+    display: flex;
+}
+
+#brandname{
+    width:50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#footerimage{
+    width:100%;
+    height:60%;
+}
+#footerimage img{
+    width: 75%;
+    height: 100%;
+}
+#footerlogo h1{
+    width: 100%;
+    height:40%;
+    font-size:25px;
+    font-family: "Lilita One", sans-serif;
+}
+
+
+#footernavlist a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-family:"Averia Gruesa Libre", system-ui;
+}
+#navigation h3{
+    font-size: 20px;
+    color:whitesmoke;
+}
+#navigation h3 a{
+    font-size: 20px;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    color: white;
+
+}
+#footernavlist a:hover{
+    color:rgb(255, 166, 77);
+    text-decoration: underline;
+    transition-duration: 0.5s;
+}
+#navigation a:hover{
+    color:rgb(255, 166, 77);
+    text-decoration: underline;
+}
+
+#socialmedia{
+    height:40px;
+    width:40px;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="main">
+            <div class="image"><a href="homepage.html"><img src="newlogo.jpg"></a></div>
+            <div class="logo">PashuCare</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">About Us</a>
+                <ul class="personalinfo">
+                    <li><a href="missionvision.html">Mission & Vision</a></li>
+                    <li><a href="animalrescue.html">Animal Rescue Operations</a></li>
+                    <li><a href="#">Shelter and rehabilitation</a></li>
+                    <li><a href="#">Veterinary services</a></li>
+                    <li><a href="#">Awareness & education campaigns</a></li>
+                </ul>
+            </li>
+            <li class="dropdown1"><a href="#">Services
+                <ul class="dropdown">
+                    <li><a href="petcare.html">Pet Training</a></li>
+                    <li><a href="#">Vet Care</a></li>
+                    <li>Grooming and Spa</li>
+                </ul>
+            </a></li>
+            <li>
+                <img src="cart.jpg">
+                <a href="file:///C:/Users/USER/OneDrive/Desktop/DTI%20project/shop.html">Shop</a>
+            </li>
+            <li>
+                <img src="call.jpg" class="call"><a href="#">Contact</a></li>
+            <li><a href="#">Login</a>
+                <ul class="login">
+                    <li><a href="doctorreg.html">As a Veterinary</a></li>
+                    <li><a href="#">As a Community</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="intropage">
+        <h1>REACH OUT TO US FOR HELP</h1>
+    </div>
+    <h2>CONTACT US</h2><hr>
+    <div id="Contact">
+        <div id="details">
+            <div class="content">
+                <img src="https://static.vecteezy.com/system/resources/previews/010/703/144/original/phone-call-calling-icon-on-square-button-vector.jpg">
+                <a><h3>CALL US <br>+91 198-965-4321</h3></a>
+            </div>
+            <div class="content">
+                <img src="https://static.vecteezy.com/system/resources/previews/013/752/254/original/gps-navigation-map-pointer-location-3d-icon-illustration-3d-map-marker-icon-free-vector.jpg">
+                <h3><b>ADDRESS </b><br><p>Community Resource Center, Ground Floor, Harmony Plaza, Opposite City Park, MG Road, Bengaluru - 560001, Karnataka, India</p></h3>
+            </div>
+        </div>
+        <div id="message">
+            <form>
+                Name:<br> <input type="text" placeholder="Your Name" required class="form"><br><br>
+                E-Mail:<br> <input type="text" placeholder="E-Mail" required class="form"><br><br>
+                <input type="text" placeholder="Message" id="Message"><br><br>
+                <a href=""><button>SEND</button></a>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div id="brandname">
+            <div id="footerimage">
+                <a href="homepage.html">
+                    <img src="newlogo1.jpg">
+                </a>
+            </div>
+            <div id="footerlogo">
+                <h1>PashuCare</h1>
+            </div>
+        </div>
+        <div id="navigation">
+            <h3>About Us</h3>
+            <li id="footernavlist"><a href="">Mission and Vision</a></li>
+            <li id="footernavlist"><a href="">Animal Rescue Operation</a></li>
+            <li id="footernavlist"><a href="">Shelter and rehabilitation</a></li>
+            <li id="footernavlist"><a href="">Awareness & education campaigns</a></li><hr>
+            <h3>Service</h3>
+            <li id="footernavlist"><a href="">Pet Trainig</a></li>
+            <li id="footernavlist"><a href="">Vet Care</a></li>
+            <li id="footernavlist"><a href="">Grooming and Spa</a></li><hr>
+            <h3><a href="">Shop</a></h3><hr>
+            <h3><a href="">Contact</a></h3><hr>
+            <h3>Login</h3>
+            <li id="footernavlist"><a href="">As a Veterinary</a></li>
+            <li id="footernavlist"><a href="">As a Community</a></li>
+        </div>
+        <div id="socialmedia">
+            <a href="" id="socialmedia"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        const images = ['url("https://i.ytimg.com/vi/H9Q7ItFXH3c/maxresdefault.jpg")',
+        'url("https://thegoodbeginning.com/wp-content/uploads/2020/07/img_3683.jpg")',
+        'url("https://paws.org.ph/wp-content/uploads/2022/06/Dog-Volunteers.jpg")', 
+        'url("https://2.bp.blogspot.com/-yO66Qx65-pc/Um5QtTqc4bI/AAAAAAAABsU/inXBKM8V_LM/s1600/P1030789.JPG")', 
+        'url("https://critterfamily.com/wp-content/uploads/2021/11/animal-loving-care.jpg")',
+        'url("https://c.stocksy.com/a/3hG000/z0/64173.jpg'];
+        let index = 0;
+        
+        setInterval(() => {
+            document.getElementById("intropage").style.backgroundImage = images[index];
+            document.getElementById("intropage").style.backgroundSize = "cover";
+            index = (index + 1) % images.length;
+        }, 3000);
+    </script>
+    </script>
+</body>
+</html>

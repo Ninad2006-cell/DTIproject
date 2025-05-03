@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Gruesa+Libre&family=Cedarville+Cursive&family=Chela+One&family=Fruktur:ital@0;1&family=Jacquard+24&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Langar&family=Lilita+One&family=Lobster&family=Patrick+Hand&family=Protest+Guerrilla&family=Rubik+Spray+Paint&family=Slackey&display=swap" rel="stylesheet">
+    <style>
+        body {
+    margin: 0;
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgb(248, 241, 237), rgb(249, 232, 226));
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: "Lilita One", sans-serif;
+}
+
+.navbar {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.image img {
+    width: 10vh;
+    height: 10vh;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.8s;
+}
+
+.nav-links li:hover {
+    background-color: #ffffff;
+    box-shadow: 5px 10px 20px rgba(91, 52, 12, 0.3);
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+}
+
+.nav-links img {
+    width: 5vh;
+    height: 5vh;
+    margin-right: 5px;
+}
+
+.dropdown,
+.personalinfo,
+.login {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: lightgray;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    padding: 0;
+    min-width: 160px;
+    z-index: 100;
+}
+
+.dropdown li,
+.personalinfo li,
+.login li {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+li:hover .dropdown,
+li:hover .personalinfo,
+li:hover .login {
+    display: block;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    height: 3px;
+    width: 25px;
+    background-color: black;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 650px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+        top: 100%;
+        left: 0;
+        z-index: 999;
+        justify-content: flex-start;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+        justify-content: flex-start;
+        padding-left: 10px;
+        z-index: 999;
+    }
+
+    .nav-links li a {
+        padding: 10px 0;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .dropdown,
+    .personalinfo,
+    .login {
+        position: static;
+        box-shadow: none;
+        background-color: #f5f5f5;
+    }
+
+    .dropdown li,
+    .personalinfo li,
+    .login li {
+        padding-left: 20px;
+        z-index: 9999;
+    }
+
+    .main {
+        width: 100%;
+        justify-content: space-between;
+        z-index: 999;
+    }
+    li:hover .dropdown,
+    li:hover .personalinfo,
+    li:hover .login {
+        display: block;
+    }
+
+}
+
+#intro{
+    background: url(injuredanimal.jpg),linear-gradient(90deg ,rgb(246, 183, 183),rgb(253, 78, 78),rgb(193, 5, 5));
+    background-blend-mode: lighten;
+    width:100%;
+    background-repeat: no-repeat;
+    height: 80vh;
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
+}
+#intro h1{
+    font-size: 10vh;
+    font-family:"Lilita One", sans-serif;
+    font-weight: 900;
+    color:rgb(82, 0, 0);
+}
+#intro p{
+    font-size: 20px;
+    font-family: "Averia Gruesa Libre", system-ui;
+    font-weight: 900;
+    color:rgb(72, 22, 2)
+}
+
+#deeds{
+    display: flex;
+    margin: 15vh 10px 15vh 10px;
+}
+#deeds h1{
+    font-size: 50px;
+    font-family: "Chela One", system-ui;
+    color:rgb(86, 69, 47);
+    font-weight: 100;
+}
+
+#dos{
+    width:50%;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.items{
+    width:60%;
+    height:80vh;
+    background-color: white;
+    margin-top: 5vh;
+}
+.items img{
+    width:100%;
+    height: 50%;
+}
+.items h3{
+    font-size: 30px;
+    font-family: "Averia Gruesa Libre", system-ui;
+    color:rgb(64, 64, 151);
+}
+.items p{
+    font-size: 20px;
+    font-weight: 900;
+    font-family: "Patrick Hand", cursive;
+}
+#dont{
+    width:50%;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+button{
+    width:100px;
+    height:40px;
+    margin-top: 10px;
+    background:linear-gradient(rgb(221, 240, 221),rgb(59, 163, 59),rgb(3, 98, 3));
+    border-radius: 20px;
+    transition-duration: 0.5s;
+}
+button :hover{
+    background-color: rgb(231, 255, 183);
+    height: 42px;
+    border-radius: 21px;
+}
+@media(min-width:150px) and (max-width:450px){
+    #deeds{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        justify-content: center;
+        align-items: center;
+        margin: 15vh 10px 15vh 10px;
+    }
+    .items{
+        width:90vw;
+        height:fit-content;
+        background-color: white;
+        margin-top: 5vh;
+    }
+
+}
+
+.slider-container{
+    width:100vw;
+    height:90vh;
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+}
+#ourwork{
+    color: #743b21;
+    font-family:"Lilita One", sans-serif ;
+    font-size: 30px;
+}
+#slider{
+    display: flex;
+    width: 2500px;
+    justify-content: space-evenly;
+    align-items: center;
+    height: fit-content;
+    animation: slide 30s linear infinite;
+    animation-direction:normal, reverse;
+}
+.slide{
+    background-color: rgb(244, 205, 154);
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
+    width:500px;
+    height: 75vh;
+    margin-left: 20px;
+}
+.slide img{
+    width: 100%;
+    height: 50%;
+}
+.slide h3{
+    font-size: 30px;
+    font-family: "Averia Gruesa Libre", system-ui;
+    color: #54250f;
+}
+.slide p{
+    font-size: 20px;
+    font-family:sans-serif;
+    color: rgb(8, 126, 87);
+}
+@keyframes slide{
+    0%{transform: translate(2000px);}
+    10%{transform: translate(1500px);}
+    20%{transform: translate(1000px);}
+    30%{transform: translate(500px);}
+    40%{transform: translate(0px)}
+    50%{transform:translate(-500px);}
+    60%{transform: translate(-1000px);}
+    70%{transform: translate(-1500px);}
+    80%{transform: translate(-2000px);}
+    90%{transform: translate(-2500px);}
+    100%{transform:translate(-2500px);}
+}
+
+footer{
+    width:100%;
+    height: 85vh;
+    background-color: rgb(63, 69, 151);
+    margin-top: 15vh;
+    display: flex;
+}
+
+#brandname{
+    width:50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#footerimage{
+    width:100%;
+    height:60%;
+}
+#footerimage img{
+    width: 75%;
+    height: 100%;
+}
+#footerlogo h1{
+    width: 100%;
+    height:40%;
+    font-size:25px;
+    font-family: "Lilita One", sans-serif;
+}
+
+
+#footernavlist a{
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-family:"Averia Gruesa Libre", system-ui;
+}
+#navigation h3{
+    font-size: 20px;
+    color:whitesmoke;
+}
+#navigation h3 a{
+    font-size: 20px;
+    transition-duration: 0.5s;
+    text-decoration: none;
+    color: white;
+
+}
+#footernavlist a:hover{
+    color:rgb(255, 166, 77);
+    text-decoration: underline;
+    transition-duration: 0.5s;
+}
+#navigation a:hover{
+    color:rgb(255, 166, 77);
+    text-decoration: underline;
+}
+
+#socialmedia{
+    height:40px;
+    width:40px;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="main">
+            <div class="image"><a href="homepage.html"><img src="https://static.vecteezy.com/system/resources/previews/006/470/722/original/pet-shop-logo-design-template-modern-animal-icon-label-for-store-veterinary-clinic-hospital-shelter-business-services-flat-illustration-background-with-dog-cat-and-horse-free-vector.jpg"></a></div>
+            <div class="logo">PashuCare</div>
+        </div>
+        <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">About Us</a>
+                <ul class="personalinfo">
+                    <li><a href="missionvision.html">Mission & Vision</a></li>
+                    <li><a href="animalrescue.html">Animal Rescue Operations</a></li>
+                    <li><a href="#">Shelter and rehabilitation</a></li>
+                    <li><a href="#">Veterinary services</a></li>
+                    <li><a href="#">Awareness & education campaigns</a></li>
+                </ul>
+            </li>
+            <li class="dropdown1"><a href="#">Services</a>
+                <ul class="dropdown">
+                    <li><a href="petcare.html">Pet Training</a></li>
+                    <li><a href="#">Vet Care</a></li>
+                    <li>Grooming and Spa</li>
+                </ul>
+            </li>
+            <li>
+                <img src="https://static.vecteezy.com/system/resources/previews/024/044/738/non_2x/shopping-cart-logo-design-cart-icon-ecommerce-logo-vector.jpg">
+                <a href="file:///C:/Users/USER/OneDrive/Desktop/DTI%20project/shop.html">Shop</a>
+            </li>
+            <li>
+                <img src="https://www.clipartkey.com/mpngs/m/274-2745947_telephone-icon-png-logo-telephone-png.png" class="call"><a href="contact.html">Contact</a>
+            </li>
+            <li><a href="#">Login</a>
+                <ul class="login">
+                    <li><a href="doctorreg.html">As a Veterinary</a></li>
+                    <li><a href="#">As a Community</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="intro">
+        <h1>Caring is Important</h1>
+        <p>A gentle touch can cure the incurable</p>
+    </div>
+    <div id="deeds">
+        <div id="dos">
+            <h1>DO'S</h1>
+
+            <div class="items">
+                <img src="nutrition.jpg">
+                <h3>Provide Proper Nutrition</h3>    
+                <p>Ensure a balanced and species appropriate diet. Fresh, clean water should always be available.Click the button to know which food should be given to your pet.<br>
+                <button href="#">Animal Foods</button></p>
+            </div>
+
+            <div class="items">
+                <img src="veterinary.jpg">
+                <h3>Regular Veterinary Check-ups</h3>
+                <p>Schedule routine health check-ups and vaccinations. Treat illness and injuries promptly.</p>
+            </div>
+
+            <div class="items">
+                <img src="clean.webp">
+                <h3>Clean Living environment</h3>
+                <p>Keep their shelter clean, dry, and safe. Regularly clean food/water bowels and bedding</p>
+            </div>  
+     
+
+            <div class="items">
+                <img src="spending time.jpg">
+                <h3>Social Interaction</h3>
+                <p>Spend time bonding with pets(especially dogs, cats, birds).Allow herd or group animals to interact with their kind.</p>
+            </div>
+        </div>
+
+
+        <div id="dont">
+            <h1>DON'Ts</h1>
+
+            <div class="items">
+                <img src="animalabuse.jpg">
+                <h3>Don't Neglect or Abuse</h3>
+                <p>Never hit, yell at, or ignore animals. Avoid neglecting basic needs like food, water, and companionship.</p>   
+            </div>
+
+            <div class="items">
+                <img src="-harmful.jpg">         
+                <h3>Don't Feed Harmful Foods</h3>
+                <p>Avoid toxic foods like chocolate, onions, grapes(for dogs), or dairy(for some adult animals).</p>
+            </div>
+
+            <div class="items">
+                <img src="overeating.jpg">
+                <h3>Don't Overfeed</h3>
+                <p>Obesity can cause health issues; follow proper feeding guidlines.</p>
+            </div>
+
+            <div class="items">
+                <img src="harsh.jpg">
+                <h3>Don't Use Harsh Chemicals Around Them:</h3>
+                <p>Many cleaning agents or pesticides can be toxic to animals.</p>
+            </div>
+        </div>
+    </div>
+    <div class="slider-container">
+        <div id="ourwork">
+            <h1>OUR CARING WORK</h1>
+        </div>
+        <div id="slider">
+            <div class="slide">
+                <img src="animalmedication.jpg">
+                <h3>ANIMAL TREATMENT WITH UTMOST CARE</h3>
+                <p>We provide most caring animal friendly treatment with most advance tools and natural medincines.</p>
+            </div>
+            <div class="slide">
+                <img src="grooming.jpg">
+                <h3>ANIMAL SPA</h3>
+                <p>Along with internal care of animals with medication, we also consider there external care for which we offer by our Grooming & Spa care.</p>
+            </div>
+            <div class="slide">
+                <img src="animaltraining.jpg">
+                <h3>ANIMAL TRAINING</h3>
+                <p>We think that each animal is capable of taking care of itself but need to be train properly, hence we offer training to this creatures.</p>
+            </div>
+            <div class="slide">
+                <img src="animalcruel.jpg">
+                <h3>ANIMAL ABUSE PREVENTION</h3>
+                <p>Animal abuse equally cruel offence as offencing a human. We fight against it legally and protect the helpless creature.</p>
+            </div>
+            <div class="slide">
+                <img src="animalshelter.jpg">
+                <h3>PROVIDING HOME TO HOMELESS</h3>
+                <p>The homeless creature are offered shelter where they are treated as the family member.</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div id="brandname">
+            <div id="footerimage">
+                <a href="homepage.html">
+                    <img src="newlogo1.jpg">
+                </a>
+            </div>
+            <div id="footerlogo">
+                <h1>PashuCare</h1>
+            </div>
+        </div>
+        <div id="navigation">
+            <h3>About Us</h3>
+            <li id="footernavlist"><a href="">Mission and Vision</a></li>
+            <li id="footernavlist"><a href="">Animal Rescue Operation</a></li>
+            <li id="footernavlist"><a href="">Shelter and rehabilitation</a></li>
+            <li id="footernavlist"><a href="">Awareness & education campaigns</a></li><hr>
+            <h3>Service</h3>
+            <li id="footernavlist"><a href="">Pet Trainig</a></li>
+            <li id="footernavlist"><a href="">Vet Care</a></li>
+            <li id="footernavlist"><a href="">Grooming and Spa</a></li><hr>
+            <h3><a href="">Shop</a></h3><hr>
+            <h3><a href="">Contact</a></h3><hr>
+            <h3>Login</h3>
+            <li id="footernavlist"><a href="">As a Veterinary</a></li>
+            <li id="footernavlist"><a href="">As a Community</a></li>
+        </div>
+        <div id="socialmedia">
+            <a href="" id="socialmedia"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

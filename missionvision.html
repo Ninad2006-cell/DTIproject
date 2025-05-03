@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    margin:0px;
+    background:linear-gradient(90deg,rgb(255, 255, 255),rgb(248, 241, 237),rgb(249, 232, 226));
+    background-repeat: none;
+    background-size: 100%;
+    background-image: url(animallife.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.navbar{
+    background-color: #ffffff;
+    padding:20px 40px;
+    box-shadow: 5px 7px 9px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Lilita One", sans-serif;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    height: 100%;
+}
+
+.nav-links li{
+    height:50px;
+    width:100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition-duration: 0.8s;
+}
+
+.nav-links li:hover{
+    background-color:#ffffff;
+    box-shadow: 5px 10px 20px rgba(91, 52, 12, 0.3);
+}
+
+.nav-links li a{
+    text-decoration: none;
+    color:black;
+}
+
+li{
+    position: relative;
+}
+
+.dropdown{
+    display: none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    list-style: none;
+    padding: 0px 0px;
+    min-width: 160px;
+    z-index:100;
+    border-bottom: 1px solid #111;
+}
+
+.dropdown li{
+    width: 100%;
+    height: 50px;
+    color: black; 
+}
+
+li:hover .dropdown{
+    color:#a0522d;
+    box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
+    background-color: lightgray;
+    display: block;
+}
+
+img{
+    width:50px;
+    height: 50px;
+}
+
+.call{
+    height:30px;
+    width: 25px;
+}
+
+.personalinfo{
+    display: none;
+    min-width:160px;
+    top:100%;
+    background-color: lightgray;
+    position: absolute;
+    padding: 0px 0px;
+    text-align: center;
+}
+
+.personalinfo li{
+    width: 100%;
+    height:50px;
+}
+
+li:hover .personalinfo{
+    box-shadow: rgba(0,0,0,0.3);
+    display: block;
+}
+
+.login{
+    display: none;
+    background-color: lightgray;
+    position: absolute;
+    top:100%;
+    padding:0 0;
+    min-width: 160px;
+}
+
+.login li{
+    width:100%;
+    height:50px;
+}
+
+li:hover .login{
+    box-shadow: rgba(0,0,0,0.3);
+    display: block;
+}
+
+.mission{
+    background-color: rgba(240, 236, 236,0.99);
+    margin: 30px 30px 30px 30px;
+    font-size: 25px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    float: right;
+}
+.mission p{
+    width:60%;
+}
+.Vision{
+    background-color: rgba(240, 236, 236,0.99);
+    margin: 30px 30px 30px 30px;
+    font-size: 25px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    float: left;
+}
+.Vision p{
+    width:60%;
+}
+
+.approach{
+    background-color: rgba(240, 236, 236,0.99);
+    margin: 30px 30px 30px 30px;
+    font-size: 25px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    float: right;
+}
+.approach p{
+    width:60%;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="main">
+            <div class="image"><a href="homepage.html"><img src="modern-animal-pet-logo-template-free-vector.jpg"></a></div>
+            <div class="logo">PashuCare</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">About Us</a>
+                <ul class="personalinfo">
+                    <li><a href="missionvision.html">Mission & Vision</a></li>
+                    <li><a href="#">Animal Rescue Operations</a></li>
+                    <li><a href="#">Shelter and rehabilitation</a></li>
+                    <li><a href="#">Veterinary services</a></li>
+                    <li><a href="#">Awareness & education campaigns</a></li>
+                </ul>
+            </li>
+            <li class="dropdown1"><a href="#">Services
+                <ul class="dropdown">
+                    <li>Pet Training</li>
+                    <li>Vet Care</li>
+                    <li>Grooming and Spa</li>
+                </ul>
+            </a></li>
+            <li>
+                <img src="cart.jpg">
+                <a href="file:///C:/Users/USER/OneDrive/Desktop/DTI%20project/shop.html">Shop</a>
+            </li>
+            <li>
+                <img src="call.jpg" class="call"><a href="#">Contact</a></li>
+            <li><a href="#">Login</a>
+                <ul class="login">
+                    <li><a href="#">As a Veterinary</a></li>
+                    <li><a href="#">As a Community</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div class="maincontent">
+        <div class="mission">
+            <img src="">
+            <p>We are committed to rescuing, rehabilitating, and protecting animals in distress, 
+               ensuring they receive the care they deserve. Our efforts include swift emergency rescues,
+               life-saving medical treatment, and long-term rehabilitation to give animals a second chance at life. 
+               Beyond immediate aid, we focus on raising public awareness to foster a compassionate society
+               where animals are free from abuse, neglect, and suffering. Through education and outreach, 
+               we inspire communities to take responsibility for animal welfare and promote lasting change. 
+               Together, we can create a safe, loving environment where all animals thrive and live with dignity 
+               and care.</p>
+        </div>
+        <div class="Vision">
+            <img src="">
+            <p>Our main goal is to bring animals and humans together and make earth true "Heaven". Our vision is not only about human animal relation but also about human nature relation. Bringing back true beauty of nature is also a part of our mission. Nature is our home and bringing it to its original form is of utmost importance</p>
+        </div>
+        <div class="approach">
+            <img src="">
+            <p>Our approach is to provide good treament to injured animals, finding new homes for them bringing back the lost ones. </p>
+        </div>
+    </div>
+</body>
+</html>

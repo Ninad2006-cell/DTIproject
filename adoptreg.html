@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Adoption Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .form-group input[type="radio"] {
+            width: auto;
+            margin-right: 5px;
+        }
+        .form-actions {
+            text-align: center;
+        }
+        .form-actions button {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-actions button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Pet Adoption Form</h2>
+        <form id="form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" required id="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" name="email" required id="email">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" name="phone" required id="phone">
+            </div>
+            <div class="form-group">
+                <label>Preferred Pet Type</label>
+                <select name="pet_type" required id="option">
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="rabbit">Rabbit</option>
+                    <option value="bird">Bird</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Do you have other pets?</label>
+                <input type="radio" name="other_pets"  value="yes" id="yes"> <label for="other_pets_yes" style="display:inline;">Yes</label>
+                <input type="radio" name="other_pets" value="no" id="no"> <label for="other_pets_no" style="display:inline;">No</label>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Submit Application</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById("form").addEventListener("submit",function(event){
+            event.preventDefault();
+
+            let Name = document.getElementById("name").value;
+            let Email = document.getElementById("email").value;
+            let Number = document.getElementById("phone").value;
+            let Option = document.getElementById("option").value;
+            let Yes = document.getElementById("yes").checked;
+            let No = document.getElementById("no").checked;
+            if(Name && Email && Number && Option && (Yes || No)){
+                alert("Registration Successfull");
+                window.location.href = "homepage.html";
+            }
+            else{
+                alert("Please fill the complete form");
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Volunteer Registration - Animal Aid</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: url('https://images.unsplash.com/photo-1555685812-4b943f1cb0eb') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      width: 360px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    h2 {
+      margin-bottom: 20px;
+      color: #2980b9;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    .btn {
+      background-color: #2980b9;
+      color: #fff;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background-color: #2471a3;
+    }
+    .link {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+    .link a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+    .link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Volunteer Registration</h2>
+    <form action="#" id="form">
+      <input type="text" placeholder="Full Name" required id="Name">
+      <input type="email" placeholder="Email Address" required id="email">
+      <input type="text" placeholder="Volunteer ID" required id="ID">
+      <input type="password" placeholder="Create Password" required id="password">
+      <button type="submit" class="btn">Register</button>
+    </form>
+    <div class="link">
+      Already registered? <a href="volunteer.html">Login</a>
+    </div>
+  </div>
+  <script>
+    document.getElementById("form").addEventListener("submit" , function(event){
+      event.preventDefault();
+
+      let Name = document.getElementById("Name")
+      let Email = document.getElementById("email")
+      let ID = document.getElementById("ID")
+      let password = document.getElementById("password")
+
+      if(Name && Email && ID && password){
+        alert("Registration Successful")
+        window.location.href = "homepage.html"
+      }
+      else{
+        alert("Please fill the Complete details")
+      }
+    })
+  </script>
+</body>
+</html>
