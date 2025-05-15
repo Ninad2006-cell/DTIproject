@@ -173,82 +173,122 @@
                 justify-content: space-between;
             }
         }
-    .bg-container {
-      height: 80vh;
-      background-size: cover;
-      background-position: center;
-      transition: background-image 1s ease-in-out;
-    }
-    .content {
-      position: relative;
-      z-index: 100;
-      text-align: center;
-      padding-top: 30vh;
-      background-color: transparent;
-      opacity: 1;
-    }
-    .content h1{
-        font-size: 70px;
-        color: #49d0a3;
-        font-family:"Lilita One", sans-serif;
-        background: rgba(0, 0, 0, 0.4);
-    }
-    .content p{
-        font-size: 25px;
-        color:red;
-        font-family:"Lilita One", sans-serif;
-    }
+ /* Background container styling */
+.bg-container {
+  background: linear-gradient(to right, #f9d423, #ff4e50);
+  padding: 40px;
+  text-align: center;
+  color: white;
+}
 
-    #maincontent{
-      width:100%;
-      height:fit-content;
-    }
+/* Content section */
+.content h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
 
-    #campaingns {
+.lead {
+  font-size: 1.2em;
+}
+
+/* Main content styling */
+#maincontent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Introduction section */
+#introduction {
+  display: flex;
+  align-items: center;
+  background: #ff9a9e;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+#introduction h2 {
+  color: #333;
+  font-size: 1.8em;
+}
+
+#introduction p {
+  color: #222;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+#introduction button {
+  background: #ff4e50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#introduction button:hover {
+  background: #fc913a;
+}
+
+/* Campaign section */
+#campaingns {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  padding: 20px;
-  background-color: #f4f4f4;
+  padding: 30px;
 }
 
+/* Individual campaign card */
 .data {
-  background: #fff;
+  background: linear-gradient(to right, #24c6dc, #514a9d);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   max-width: 350px;
   text-align: center;
   transition: transform 0.3s ease-in-out;
+  color: white;
 }
 
 .data:hover {
   transform: scale(1.05);
 }
 
+/* Campaign images */
 .data img {
   width: 100%;
   height: auto;
   border-radius: 8px;
 }
 
-h2 {
-  font-size: 1.5em;
-  color: #333;
+/* Campaign headings */
+.data h2 {
+  font-size: 1.6em;
   margin-top: 10px;
+  color: #fff;
 }
 
-p {
-  font-size: 1em;
-  color: #555;
-  line-height: 1.6;
+/* Campaign descriptions */
+.data p {
+  font-size: 1.1em;
+  color: #f3f3f3;
+  line-height: 1.5;
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
   #campaingns {
     flex-direction: column;
     align-items: center;
+  }
+
+  #introduction {
+    flex-direction: column;
+    text-align: center;
   }
 }
   </style>
